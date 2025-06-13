@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Instagram, Twitter, Facebook } from 'lucide-react';
+import { Instagram, Twitter } from 'lucide-react';
 
 const SnsSection: React.FC = () => {
   const [ref, inView] = useInView({
@@ -44,7 +44,7 @@ const SnsSection: React.FC = () => {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
         >
           <motion.div
             variants={itemVariants}
@@ -83,25 +83,6 @@ const SnsSection: React.FC = () => {
               @artemis_darts
             </a>
           </motion.div>
-          
-          <motion.div
-            variants={itemVariants}
-            className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg p-8 text-white text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
-          >
-            <div className="flex justify-center mb-6">
-              <Facebook className="h-16 w-16" />
-            </div>
-            <h3 className="text-2xl font-bold mb-4">Facebook</h3>
-            <p className="mb-6">大会結果や詳しい活動レポートを発信しています。</p>
-            <a 
-              href="https://facebook.com" 
-              target="_blank"
-              rel="noopener noreferrer" 
-              className="inline-block px-6 py-3 bg-white text-blue-700 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200"
-            >
-              Artemis Darts
-            </a>
-          </motion.div>
         </motion.div>
         
         <div className="mt-16">
@@ -129,14 +110,6 @@ const SnsSection: React.FC = () => {
                   className="bg-white p-3 rounded-full shadow hover:shadow-md transition-shadow duration-200"
                 >
                   <Twitter className="h-6 w-6 text-blue-400" />
-                </a>
-                <a 
-                  href="https://facebook.com" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white p-3 rounded-full shadow hover:shadow-md transition-shadow duration-200"
-                >
-                  <Facebook className="h-6 w-6 text-blue-600" />
                 </a>
               </div>
             </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Target, Award } from 'lucide-react';
 
 const Sponsors: React.FC = () => {
   const [ref, inView] = useInView({
@@ -28,26 +27,26 @@ const Sponsors: React.FC = () => {
     }
   };
 
-  // Mock sponsor data
+  // スポンサー情報 - 実際のロゴ画像URLに置き換えてください
   const sponsors = [
     {
       id: 1,
       name: "ダーツショップ Target",
-      logo: <Target className="h-16 w-16 text-blue-600" />,
+      logoUrl: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop", // 実際のロゴ画像URLに置き換え
       description: "プロ仕様のダーツ用品を提供しています。メンバーは10%割引で購入可能です。",
       url: "#"
     },
     {
       id: 2,
       name: "DartsCafe Bulls",
-      logo: <Target className="h-16 w-16 text-red-600" />,
+      logoUrl: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop", // 実際のロゴ画像URLに置き換え
       description: "池袋にあるダーツカフェ。メンバーは入場料が無料になります。",
       url: "#"
     },
     {
       id: 3,
       name: "スポーツメーカー Ace",
-      logo: <Award className="h-16 w-16 text-green-600" />,
+      logoUrl: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop", // 実際のロゴ画像URLに置き換え
       description: "サークルユニフォームを提供していただいています。",
       url: "#"
     }
@@ -77,16 +76,20 @@ const Sponsors: React.FC = () => {
               variants={itemVariants}
               className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="flex justify-center mb-4">
-                <div className="bg-blue-50 p-4 rounded-full inline-block">
-                  {sponsor.logo}
+              <div className="flex justify-center mb-6">
+                <div className="w-32 h-16 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden">
+                  <img 
+                    src={sponsor.logoUrl} 
+                    alt={`${sponsor.name}のロゴ`}
+                    className="max-w-full max-h-full object-contain"
+                  />
                 </div>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">{sponsor.name}</h3>
               <p className="text-gray-700 mb-6">{sponsor.description}</p>
               <a 
                 href={sponsor.url} 
-                className="inline-flex items-center text-blue-600 hover:text-blue-800"
+                className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-200"
               >
                 詳細を見る
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

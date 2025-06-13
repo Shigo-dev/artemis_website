@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Twitter, Facebook, Mail, MapPin, Calendar } from 'lucide-react';
+import { Instagram, Twitter, Mail, MapPin, Calendar } from 'lucide-react';
 import Logo from './Logo';
 
 const Footer: React.FC = () => {
@@ -33,14 +33,6 @@ const Footer: React.FC = () => {
                 className="bg-gray-800 p-2 rounded-full hover:bg-blue-400 transition-colors duration-200"
               >
                 <Twitter className="h-5 w-5" />
-              </a>
-              <a 
-                href="https://facebook.com" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 p-2 rounded-full hover:bg-blue-600 transition-colors duration-200"
-              >
-                <Facebook className="h-5 w-5" />
               </a>
             </div>
           </div>
